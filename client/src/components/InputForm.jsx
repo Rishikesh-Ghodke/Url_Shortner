@@ -44,8 +44,9 @@ export const InputForm = () => {
             return;
         }
         setIsloading(true);
+        console.log("Submitting to:", axios.defaults.baseURL);
         axios.post('/api/url/shorten', input).then(res => {
-            if (res.status) {
+            if (res.data) {
                 let data = res.data;
                 let createUrl = clientBaseUrl + data.urlCode;
                 setUrl(createUrl);
@@ -53,9 +54,9 @@ export const InputForm = () => {
             console.log("res", res);
             setIsloading(false);
         }).catch(error => {
-            let errorMsg = error.response.data.error;
+            console.error("Full Error:", error);
+            let errorMsg = error.response?.data?.error || "Network Error: Could not reach server";
             setUrl(errorMsg);
-            console.log("error", errorMsg);
             setIsloading(false);
         });
     };
