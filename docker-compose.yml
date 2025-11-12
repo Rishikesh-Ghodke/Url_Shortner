@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend:
+    image: url-shortener-backend
+    container_name: url-shortener-backend
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_URL=mongodb+srv://rishi:RG8172004@cluster0.u65kq.mongodb.net/url-shortener
+    restart: always
