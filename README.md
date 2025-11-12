@@ -9,8 +9,6 @@ URL Shortener Web Application is a user-friendly tool that allows users to creat
 - **Dark/Light Mode**: User-controlled theme toggling.
 - **User-friendly Interface**: Intuitive design for a seamless experience.
 
-## Demo
-![URL Shortener Demo](demo_screenshot.png)
 
 ## Installation
 To run the application locally:
